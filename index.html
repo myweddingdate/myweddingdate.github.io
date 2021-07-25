@@ -13,6 +13,23 @@
       <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
+
+      <style type="text/css">
+         html {
+  scroll-behavior: smooth;
+}
+         @media only screen and (max-width: 800px) {
+  .text-penganten {
+     font-size: 24pt!important;
+}
+     @media only screen and (min-width: 900px) {
+  .bg-image {
+     max-width:100%;
+    max-height:100%;
+}
+
+
+      </style>
    </head>
    <body>
       <audio id="myAudio">
@@ -40,8 +57,7 @@
                <div class="container-fluid ">
                   <nav class="navbar navbar-expand-lg header-navbar ml-0 ml-lg-5">
                      <a class=" navbar-brand navbar-logo scroll" href="#wrapper">
-                     <img class="mb-0 logo-light" src="assets/svg/logo-light.svg" alt="">
-                     <img class="mb-0 logo-dark" src="assets/svg/logo-dark.svg" alt="">
+                      <h4 style="font-family: 'Mongolian Baiti'!important; color:#f55d7c;">My Wedding Day</h4>
                      </a>
                      <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
                      <span class="fa fa-bars"></span>
@@ -71,9 +87,10 @@
                <!--row-->
                <div class="row min-vh-80 align-items-center z-index-2 position-relative text-center">
                   <div class="col-12">
-                     <h1 class="display-2  text-white mb-4">Rivaldi &amp; Ratu</h1>
-                     <p class="font-weight-300 text-light  lead mb-5 ">Rabu 25 Agustus 2021</p>
-                     <a href="#rsvp" class="btn btn-primary btn-wide-sm btn-sm  scroll" onclick="playAudio()">Play</a>
+                     <h1 class="display-2  text-white mb-4 text-penganten" style="margin-right:50%; ">Rivaldi &amp; Ratu</h1>
+                     <p class="font-weight-300 text-light  lead mb-5 "  style="margin-right:50%; ">Rabu 25 Agustus 2021</p>
+                     <p  class="font-weight-300 text-light  lead mb-5 "  style="margin-right:50%; color: #fff!important; background-color: #f55d7c; border-radius: 10px; " id="demo">time</p>
+                     <a href="#rsvp" class="btn btn-primary btn-wide-sm btn-sm  scroll" onclick="playAudio()"  style="margin-right:50%; ">Play</a>
                   </div>
                </div>
                <!--End row-->
@@ -103,6 +120,7 @@
                         <h1 class="font-secondary display-4">Akad Nikah</h1>
                         <p class="lead font-weight-300 text-dark-gray opacity-8">Rabu 25 Agustus 2021 08.00 s/d Selesai</p>
                         <p class="mb-4 pr-5">Akad Dilaksanakan di Kediaman Mempelai Wanita Di Jalan Raya Lemah abang Kp.cibeber</p>
+
                         <div class="countdown row text-center"></div>
                      </div>
                   </div>
@@ -614,10 +632,11 @@
       </div>
       <!-- End wrapper-->
       <!--Javascript-->
+           <script src="https://cdn.jsdelivr.net/gh/scottschiller/Snowstorm/snowstorm.js" type="text/javascript"></script>
       <script src="js/jquery-1.12.4.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/smooth-scroll.js"></script>
-          <script src='http://yourjavascript.com/1171704334/efek-salju-faisal.js' type='text/javascript'/>
+   <script src="https://unpkg.com/easy-scroll"></script>
       <script src="js/jquery.magnific-popup.min.js"></script>
       <script src="js/jquery.countdown.min.js"></script>
       <script src="js/placeholders.min.js"></script>
@@ -632,11 +651,62 @@
    https://beatpb.club/search/epub/16/7// -->
 
 <script type="text/javascript">
+window.scroll({
+  top: 2500, 
+  left: 0, 
+  behavior: 'smooth'
+});
 
+// Scroll certain amounts from current position 
+window.scrollBy({ 
+  top: 100, // could be negative value
+  left: 0, 
+  behavior: 'smooth' 
+});
+
+// Scroll to a certain element
+document.querySelector('.hello').scrollIntoView({ 
+  behavior: 'smooth' 
+});
 
 function playAudio() { 
       var x = document.getElementById("myAudio"); 
   x.play(); 
 } 
 
+</script>
+<script>
+snowStorm.snowColor = '#eb346b';   // mengubah warna salju
+snowStorm.flakesMaxActive = 100;    // menampilkan jumlah salju yang muncul
+snowStorm.useTwinkleEffect = true; // membuat salju berkelap-kelip
+</script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 25, 2021 09:00:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
 </script>
