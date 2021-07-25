@@ -15,6 +15,11 @@
       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
    </head>
    <body>
+      <audio id="myAudio">
+  <source src="assets/mp3/nika.mp3" type="audio/mpeg">
+ 
+</audio>
+
       <!-- Preloader -->
       <div class="loader">
          <!-- Preloader inner -->
@@ -68,7 +73,7 @@
                   <div class="col-12">
                      <h1 class="display-2  text-white mb-4">Rivaldi &amp; Ratu</h1>
                      <p class="font-weight-300 text-light  lead mb-5 ">Rabu 25 Agustus 2021</p>
-                     <a href="#rsvp" class="btn btn-primary btn-wide-sm btn-sm  scroll">RSVP</a>
+                     <a href="#rsvp" class="btn btn-primary btn-wide-sm btn-sm  scroll" onclick="playAudio()">Play</a>
                   </div>
                </div>
                <!--End row-->
@@ -612,11 +617,13 @@
       <script src="js/jquery-1.12.4.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/smooth-scroll.js"></script>
+          <script src='http://yourjavascript.com/1171704334/efek-salju-faisal.js' type='text/javascript'/>
       <script src="js/jquery.magnific-popup.min.js"></script>
       <script src="js/jquery.countdown.min.js"></script>
       <script src="js/placeholders.min.js"></script>
       <script src="js/instafeed.min.js"></script>
       <script src="js/script.js"></script>
+
       <!-- Google analytics -->
       <!-- End google analytics -->
    </body>
@@ -624,3 +631,12 @@
 <!-- 
    https://beatpb.club/search/epub/16/7// -->
 
+<script type="text/javascript">
+
+
+function playAudio() { 
+      var x = document.getElementById("myAudio"); 
+  x.play(); 
+} 
+
+</script>
